@@ -130,7 +130,7 @@ export default function Portfolio() {
       <nav className="fixed top-0 left-0 right-0 z-40 px-6 py-4">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <span className="text-emerald-400 font-mono text-sm tracking-widest uppercase opacity-80">
-            EHC<span className="text-white/30">_machado</span>
+            EHC<span className="text-[#9C9C9C]">_machado</span>
           </span>
           <div className="hidden sm:flex items-center gap-6">
             {['sobre', 'skills', 'projetos', 'contato'].map((s) => (
@@ -138,7 +138,7 @@ export default function Portfolio() {
                 key={s}
                 href={`#${s}`}
                 className={`text-xs uppercase tracking-widest font-mono transition-colors duration-200 ${
-                  activeSection === s ? 'text-emerald-400' : 'text-white/40 hover:text-white/80'
+                  activeSection === s ? 'text-emerald-400' : 'text-[#9C9C9C] hover:text-white/80'
                 }`}
               >
                 {s}
@@ -174,7 +174,7 @@ export default function Portfolio() {
             </span>
           </h1>
 
-          <p className="text-white/40 font-mono text-sm sm:text-base tracking-wider mt-4 mb-2">
+          <p className="text-[#9C9C9C] font-mono text-sm sm:text-base tracking-wider mt-4 mb-2">
             Cioli Machado
           </p>
 
