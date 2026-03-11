@@ -149,6 +149,7 @@ export default function Portfolio() {
       </nav>
 
       {/* Hero */}
+      <main>
       <section
         id="hero"
         className="relative min-h-screen flex flex-col items-center justify-center px-6 text-center"
@@ -204,6 +205,7 @@ export default function Portfolio() {
 
         <a
           href="#sobre"
+          aria-label="Ir para a próxima seção"
           className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/20 hover:text-white/60 transition-colors animate-bounce"
         >
           <ChevronDown className="size-5" />
@@ -450,6 +452,7 @@ export default function Portfolio() {
           Feito com Next.js + shadcn/ui
         </p>
       </footer>
+      </main>
     </div>
   )
 }
