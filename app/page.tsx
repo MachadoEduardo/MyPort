@@ -256,7 +256,7 @@ export default function Portfolio() {
                       <AnimatedCounter value={stat.value} />
                       {stat.suffix}
                     </div>
-                    <div className="text-white/40 text-xs leading-snug">{stat.label}</div>
+                    <div className="text-white/60 text-xs leading-snug">{stat.label}</div>
                   </CardContent>
                 </Card>
               ))}
@@ -281,7 +281,7 @@ export default function Portfolio() {
             {skills.map((skill) => (
               <div
                 key={skill.name}
-                className="group p-4 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:border-emerald-500/20 hover:bg-white/[0.04] transition-all duration-300"
+                className="group p-4 rounded-xl border border-white/[0.12] bg-white/[0.02] hover:border-emerald-500/20 hover:bg-white/[0.04] transition-all duration-300"
               >
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2">
@@ -292,7 +292,7 @@ export default function Portfolio() {
                   </div>
                   <Badge
                     variant="outline"
-                    className="text-[10px] border-white/10 text-white/30 font-mono"
+                    className="text-[10px] border-white/10 text-white/50 font-mono"
                   >
                     {skill.category}
                   </Badge>
@@ -331,7 +331,7 @@ export default function Portfolio() {
                 className={`group relative overflow-hidden border transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl ${
                   project.highlight
                     ? 'border-emerald-500/20 bg-emerald-500/[0.04] hover:border-emerald-500/40 hover:shadow-emerald-500/10'
-                    : 'border-white/[0.06] bg-white/[0.02] hover:border-white/10'
+                    : 'border-white/[0.12] bg-white/[0.02] hover:border-white/10'
                 }`}
               >
                 {project.highlight && (
@@ -351,7 +351,7 @@ export default function Portfolio() {
                       <Badge
                         key={tech}
                         variant="outline"
-                        className="border-white/10 text-white/50 text-[11px] gap-1 font-mono"
+                        className="border-white/10 text-white/70 text-[11px] gap-1 font-mono"
                       >
                         {techIcons[tech]}
                         {tech}
@@ -389,7 +389,7 @@ export default function Portfolio() {
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Vamos trabalhar juntos?
           </h2>
-          <p className="text-white/40 max-w-md mx-auto mb-12 text-base">
+          <p className="text-white/60 max-w-md mx-auto mb-12 text-base">
             Estou aberto a novas oportunidades e colaborações. Entre em contato por qualquer canal abaixo.
           </p>
 
@@ -425,14 +425,14 @@ export default function Portfolio() {
                 href={contact.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col items-center gap-3 p-5 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:border-emerald-500/30 hover:bg-emerald-500/[0.04] transition-all duration-300 hover:-translate-y-1"
+                className="group flex flex-col items-center gap-3 p-5 rounded-xl border border-white/[0.12] bg-white/[0.02] hover:border-emerald-500/30 hover:bg-emerald-500/[0.04] transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="text-white/30 group-hover:text-emerald-400 transition-colors duration-300">
+                <div className="text-white/50 group-hover:text-emerald-400 transition-colors duration-300">
                   {contact.icon}
                 </div>
                 <div>
                   <div className="text-white/90 font-medium text-sm">{contact.label}</div>
-                  <div className="text-white/30 text-xs mt-0.5 truncate max-w-[120px]">
+                  <div className="text-white/50 text-xs mt-0.5 truncate max-w-[120px]">
                     {contact.value}
                   </div>
                 </div>
@@ -444,7 +444,7 @@ export default function Portfolio() {
 
       {/* Footer */}
       <footer className="border-t border-white/[0.04] py-8 px-6 text-center">
-        <p className="text-white/20 font-mono text-xs tracking-widest">
+        <p className="text-white/40 font-mono text-xs tracking-widest">
           © 2025 Eduardo Henrique Cioli Machado
           <span className="text-emerald-500/40"> · </span>
           Feito com Next.js + shadcn/ui
