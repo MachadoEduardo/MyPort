@@ -9,6 +9,8 @@
 ![Tailwind](https://img.shields.io/badge/Tailwind-v4-06b6d4?style=flat-square&logo=tailwindcss)
 ![Deploy](https://img.shields.io/badge/Deploy-Vercel-black?style=flat-square&logo=vercel)
 
+![Preview do portfólio](public/portfolio.png)
+
 ---
 
 ## 📋 Sobre o projeto
