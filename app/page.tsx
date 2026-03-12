@@ -123,8 +123,8 @@ export default function Portfolio() {
       />
 
       {/* Ambient glow */}
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-emerald-500/5 blur-[120px] pointer-events-none" />
-      <div className="fixed bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-cyan-500/5 blur-[100px] pointer-events-none" />
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-200 h-125 rounded-full bg-emerald-500/5 blur-[120px] pointer-events-none" />
+      <div className="fixed bottom-0 right-0 w-100 h-100 rounded-full bg-cyan-500/5 blur-[100px] pointer-events-none" />
 
       {/* Nav */}
       <nav className="fixed top-0 left-0 right-0 z-40 px-6 py-4">
@@ -223,7 +223,7 @@ export default function Portfolio() {
               <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-6">
                 Backend first,
                 <br />
-                <span className="text-white/40">fullstack always.</span>
+                <span className="text-white/60">fullstack always.</span>
               </h2>
               <p className="text-white/60 leading-relaxed text-base">
                 Desenvolvedor Full-Stack com foco em backend <strong className="text-white/90">PHP/Laravel</strong>,
@@ -251,7 +251,7 @@ export default function Portfolio() {
               ].map((stat) => (
                 <Card
                   key={stat.label}
-                  className="bg-white/[0.03] border-white/[0.06] hover:border-emerald-500/20 transition-colors duration-300"
+                  className="bg-white/3 border-white/6 hover:border-emerald-500/20 transition-colors duration-300"
                 >
                   <CardContent className="pt-6">
                     <div className="text-3xl font-bold text-white mb-1">
@@ -267,7 +267,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <Separator className="max-w-5xl mx-auto bg-white/[0.04]" />
+      <Separator className="max-w-5xl mx-auto bg-white/4" />
 
       {/* Skills */}
       <section id="skills" className="py-28 px-6">
@@ -283,7 +283,7 @@ export default function Portfolio() {
             {skills.map((skill) => (
               <div
                 key={skill.name}
-                className="group p-4 rounded-xl border border-white/[0.12] bg-white/[0.02] hover:border-emerald-500/20 hover:bg-white/[0.04] transition-all duration-300"
+                className="group p-4 rounded-xl border border-white/12 bg-white/2 hover:border-emerald-500/20 hover:bg-white/4 transition-all duration-300"
               >
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2">
@@ -299,7 +299,7 @@ export default function Portfolio() {
                     {skill.category}
                   </Badge>
                 </div>
-                <div className="h-1 rounded-full bg-white/[0.06] overflow-hidden">
+                <div className="h-1 rounded-full bg-white/6 overflow-hidden">
                   <div
                     className="h-full rounded-full transition-all duration-1000"
                     style={{
@@ -314,7 +314,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <Separator className="max-w-5xl mx-auto bg-white/[0.04]" />
+      <Separator className="max-w-5xl mx-auto bg-white/4" />
 
       {/* Projetos */}
       <section id="projetos" className="py-28 px-6">
@@ -332,8 +332,8 @@ export default function Portfolio() {
                 key={project.name}
                 className={`group relative overflow-hidden border transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl ${
                   project.highlight
-                    ? 'border-emerald-500/20 bg-emerald-500/[0.04] hover:border-emerald-500/40 hover:shadow-emerald-500/10'
-                    : 'border-white/[0.12] bg-white/[0.02] hover:border-white/10'
+                    ? 'border-emerald-500/20 bg-emerald-500/4 hover:border-emerald-500/40 hover:shadow-emerald-500/10'
+                    : 'border-white/12 bg-white/2 hover:border-white/10'
                 }`}
               >
                 {project.highlight && (
@@ -380,7 +380,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <Separator className="max-w-5xl mx-auto bg-white/[0.04]" />
+      <Separator className="max-w-5xl mx-auto bg-white/4" />
 
       {/* Contato */}
       <section id="contato" className="py-28 px-6">
@@ -427,14 +427,14 @@ export default function Portfolio() {
                 href={contact.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col items-center gap-3 p-5 rounded-xl border border-white/[0.12] bg-white/[0.02] hover:border-emerald-500/30 hover:bg-emerald-500/[0.04] transition-all duration-300 hover:-translate-y-1"
+                className="group flex flex-col items-center gap-3 p-5 rounded-xl border border-white/12 bg-white/2 hover:border-emerald-500/30 hover:bg-emerald-500/[0.04] transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="text-white/50 group-hover:text-emerald-400 transition-colors duration-300">
                   {contact.icon}
                 </div>
                 <div>
                   <div className="text-white/90 font-medium text-sm">{contact.label}</div>
-                  <div className="text-white/50 text-xs mt-0.5 truncate max-w-[120px]">
+                  <div className="text-white/50 text-xs mt-0.5 truncate max-w-30">
                     {contact.value}
                   </div>
                 </div>
@@ -445,8 +445,8 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/[0.04] py-8 px-6 text-center">
-        <p className="text-white/40 font-mono text-xs tracking-widest">
+      <footer className="border-t border-white/4 py-8 px-6 text-center">
+        <p className="text-white/60 font-mono text-xs tracking-widest">
           © 2025 Eduardo Henrique Cioli Machado
           <span className="text-emerald-500/40"> · </span>
           Feito com Next.js + shadcn/ui
