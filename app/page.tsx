@@ -67,7 +67,7 @@ const techIcons: Record<string, React.ReactNode> = {
 
 const timeline = [
   {
-    year: '2022',
+    year: '2023',
     title: 'Início em ADS',
     subtitle: 'SENAC — Análise e Desenvolvimento de Sistemas',
     description: 'Ingressei no curso de ADS, dando os primeiros passos no desenvolvimento de software e lógica de programação.',
@@ -77,8 +77,16 @@ const timeline = [
   {
     year: '2024',
     title: 'Primeiro emprego na área',
-    subtitle: 'GrupoMM — Desenvolvedor Fullstack',
-    description: 'Ingressei no GrupoMM, trabalhando com PHP/Laravel em ambiente corporativo, manutenção de CRMs, APIs e integração de sistemas.',
+    subtitle: 'GrupoMM — Estagiário TI',
+    description: 'Ingressei no GrupoMM, trabalhando com análise de dados e suporte em ambiente corporativo, manutenção de CRMs, APIs e integração de sistemas.',
+    icon: <Briefcase className="size-4" />,
+    type: 'work',
+  },
+  {
+    year: '2024',
+    title: 'Subindo mais um degrau',
+    subtitle: 'GrupoMM — Suporte em Crédito e Cobrança',
+    description: 'Efetivado como Suporte em Crédito e Cobrança, assumi maior autonomia técnica, responsável pelo funcionamento do CRM, suas integrações e pela análise de dados da área.',
     icon: <Briefcase className="size-4" />,
     type: 'work',
   },
@@ -278,7 +286,7 @@ export default function Portfolio() {
 
             <p className="text-white/60 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
               Desenvolvedor Fullstack:{' '}
-              <span className="text-white/90">criando soluções de ponta a ponta</span>
+              <span className="text-white/90">construindo aplicações completas, da infraestrutura à interface.</span>
             </p>
 
             <div className="flex items-center justify-center gap-3 mt-10">
