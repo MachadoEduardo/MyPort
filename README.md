@@ -54,7 +54,7 @@ O site apresenta minha trajetória, stack técnico, projetos desenvolvidos e can
 
 ```bash
 # Clone o repositório
-git clone https://github.com/eduardohcm/meu-portfolio
+git clone https://github.com/MachadoEduardo/MyPort
 
 # Entre na pasta
 cd meu-portfolio
