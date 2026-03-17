@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: 'Eduardo Machado | Desenvolvedor Fullstack',
     description:
       'Desenvolvedor Fullstack com foco em PHP/Laravel, Nuxt.js e PostgreSQL. Veja meus projetos e entre em contato.',
-    url: 'https://eduardomachado-machadoeduardos-projects.vercel.app',
+    url: 'https://eduardomachado.vercel.app',
     siteName: 'Eduardo Machado',
     locale: 'pt_BR',
     type: 'website',
