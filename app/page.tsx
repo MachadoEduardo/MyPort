@@ -23,6 +23,7 @@ import {
   BookOpen,
   Wrench,
   FigmaIcon,
+  Trophy
 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import gsap from 'gsap'
@@ -129,6 +130,86 @@ const learning = [
   },
 ]
 
+const experiences = [
+  {
+    date: 'Abril 2025',
+    title: 'Comitê de Inovação',
+    subtitle: 'GrupoMM',
+    description:
+      'Convidado a integrar o comitê responsável por trazer tecnologia e novas ideias para dentro da empresa, utilizando inovação aberta e participando de eventos e discussões voltados à melhoria contínua.',
+    badge: 'Inovação Corporativa',
+    highlight: false,
+  },
+  {
+    date: 'Maio 2025',
+    title: '1º Lugar — FICTHON Etapa Local',
+    subtitle: 'Fecomércio PR · Ponta Grossa',
+    description:
+      'Conquistei o primeiro lugar na etapa local do FICTHON com a ideia inovadora FreteFy, evento fomentado pela Fecomércio PR voltado ao empreendedorismo e inovação.',
+    badge: '🥇 1º Lugar',
+    highlight: true,
+  },
+  {
+    date: 'Junho 2025',
+    title: 'Etapa Final — FICTHON 2025',
+    subtitle: 'Fecomércio PR · Representando Ponta Grossa',
+    description:
+      'Representei a cidade de Ponta Grossa na etapa final do FICTHON 2025, levando a solução FreteFy à competição estadual.',
+    badge: 'Etapa Final',
+    highlight: false,
+  },
+  {
+    date: 'Julho 2025',
+    title: '1º Lugar — InovaWeek (Desafio Maker)',
+    subtitle: 'Evento de Inovação',
+    description:
+      'Atingi o primeiro lugar no Desafio Maker do InovaWeek, evento voltado à inovação onde enfrentamos desafios reais. A missão era desenvolver soluções com IA viáveis para problemas concretos.',
+    badge: '🥇 1º Lugar',
+    highlight: true,
+  },
+  {
+    date: 'Setembro 2025',
+    title: 'Palestrante — Metodologia Lean',
+    subtitle: 'Semana de Inovação · GrupoMM',
+    description:
+      'Conduzi uma roda de conversa para toda a empresa com o objetivo de compartilhar e ensinar sobre Metodologia Lean e seus usos práticos no ambiente corporativo.',
+    badge: 'Palestrante',
+    highlight: false,
+  },
+  {
+    date: 'Outubro 2025',
+    title: '3º Lugar — Sebrae Garage',
+    subtitle: 'Sebrae · FreteUp',
+    description:
+      'Minha equipe conquistou o terceiro lugar no Sebrae Garage com a ideia FreteUp, evento que estimula o desenvolvimento de ideias inovadoras e startups.',
+    badge: '🥉 3º Lugar',
+    highlight: false,
+  },
+]
+
+const testimonials = [
+  {
+    quote: 'Dedicação e esforço evidentes, com resultados excelentes. Atitude positiva e colaborativa que toda a equipe aprecia — proatividade que se destaca e fortalece o time.',
+    author: 'Nahyeri Kott',
+    role: 'Supervisora · Crédito e Cobrança, GrupoMM',
+  },
+  {
+    quote: 'Uma peça fundamental para o sucesso do projeto.',
+    author: 'Rafael Koteski',
+    role: 'Gerente de Projetos · Equipe de Desenvolvimento',
+  },
+  {
+    quote: 'Proativo, atencioso e colaborativo. Sempre disposto a ajudar, explica com clareza termos técnicos e fluxos de negócio. Não deixa para a última hora.',
+    author: 'Luis Chibilski',
+    role: 'Analista Help Desk · GrupoMM',
+  },
+  {
+    quote: 'Conhecimentos que vão além do desenvolvimento — design, prototipação e comunicação técnica. Um pilar entre o produto, o cliente e o desenvolvimento.',
+    author: 'Matheus Padilha',
+    role: 'Mid Level Software Engineer',
+  },
+]
+
 // ─── Componentes auxiliares ────────────────────────────────────────────────────
 
 function AnimatedCounter({ value, duration = 1200 }: { value: number; duration?: number }) {
@@ -210,7 +291,7 @@ export default function Portfolio() {
 
       {/* Grain overlay */}
       <div
-        className="fixed inset-0 pointer-events-none z-50 opacity-[0.03]"
+        className="fixed inset-0 pointer-events-none z-50 opacity-3"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
           backgroundRepeat: 'repeat',
@@ -219,8 +300,8 @@ export default function Portfolio() {
       />
 
       {/* Ambient glows */}
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-emerald-500/5 blur-[120px] pointer-events-none" />
-      <div className="fixed bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-cyan-500/5 blur-[100px] pointer-events-none" />
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-200 h-125 rounded-full bg-emerald-500/5 blur-[120px] pointer-events-none" />
+      <div className="fixed bottom-0 right-0 w-100 h-100 rounded-full bg-cyan-500/5 blur-[100px] pointer-events-none" />
 
       {/* Nav */}
       <nav className="fixed top-0 left-0 right-0 z-40 px-6 py-4">
@@ -229,13 +310,12 @@ export default function Portfolio() {
             EHC<span className="text-[#9C9C9C]">_machado</span>
           </span>
           <div className="hidden sm:flex items-center gap-6">
-            {['sobre', 'trajetória', 'skills', 'projetos', 'agora', 'contato'].map((s) => (
+            {['sobre', 'trajetória', 'skills', 'projetos', 'conquistas', 'feedbacks', 'agora', 'contato'].map((s) => (
               <a
                 key={s}
                 href={`#${s}`}
-                className={`text-xs uppercase tracking-widest font-mono transition-colors duration-200 ${
-                  activeSection === s ? 'text-emerald-400' : 'text-[#9C9C9C] hover:text-white/80'
-                }`}
+                className={`text-xs uppercase tracking-widest font-mono transition-colors duration-200 ${activeSection === s ? 'text-emerald-400' : 'text-[#9C9C9C] hover:text-white/80'
+                  }`}
               >
                 {s}
               </a>
@@ -350,7 +430,7 @@ export default function Portfolio() {
                   <Card
                     key={stat.label}
                     data-animation="stat"
-                    className="bg-white/[0.03] border-white/[0.06] hover:border-emerald-500/20 transition-colors duration-300"
+                    className="bg-white/3 border-white/6 hover:border-emerald-500/20 transition-colors duration-300"
                   >
                     <CardContent className="pt-6">
                       <div className="text-3xl font-bold text-white mb-1">
@@ -366,7 +446,7 @@ export default function Portfolio() {
           </div>
         </section>
 
-        <Separator className="max-w-5xl mx-auto bg-white/[0.04]" />
+        <Separator className="max-w-5xl mx-auto bg-white/4" />
 
         {/* ── Trajetória ── */}
         <section id="trajetória" className="py-28 px-6">
@@ -380,7 +460,7 @@ export default function Portfolio() {
 
             <div className="relative">
               {/* linha vertical */}
-              <div className="absolute left-[19px] top-0 bottom-0 w-px bg-white/[0.06]" />
+              <div className="absolute left-4.75 top-0 bottom-0 w-px bg-white/6" />
 
               <div className="space-y-10">
                 {timeline.map((item, i) => (
@@ -391,11 +471,10 @@ export default function Portfolio() {
                   >
                     {/* bolinha */}
                     <div
-                      className={`absolute left-0 top-1 size-10 rounded-full flex items-center justify-center border ${
-                        item.type === 'work'
-                          ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400'
-                          : 'border-cyan-500/30 bg-cyan-500/10 text-cyan-400'
-                      }`}
+                      className={`absolute left-0 top-1 size-10 rounded-full flex items-center justify-center border ${item.type === 'work'
+                        ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400'
+                        : 'border-cyan-500/30 bg-cyan-500/10 text-cyan-400'
+                        }`}
                     >
                       {item.icon}
                     </div>
@@ -420,7 +499,7 @@ export default function Portfolio() {
           </div>
         </section>
 
-        <Separator className="max-w-5xl mx-auto bg-white/[0.04]" />
+        <Separator className="max-w-5xl mx-auto bg-white/4" />
 
         {/* ── Skills ── */}
         <section id="skills" className="py-28 px-6">
@@ -435,7 +514,7 @@ export default function Portfolio() {
                 <div
                   key={tech.name}
                   data-animation="skill"
-                  className="group flex flex-col items-center gap-3 p-5 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:border-emerald-500/20 hover:bg-white/[0.04] transition-all duration-300 hover:-translate-y-1 text-center"
+                  className="group flex flex-col items-center gap-3 p-5 rounded-xl border border-white/6 bg-white/2 hover:border-emerald-500/20 hover:bg-white/4 transition-all duration-300 hover:-translate-y-1 text-center"
                 >
                   <div className="text-white/30 group-hover:text-emerald-400 transition-colors duration-300">
                     {tech.icon}
@@ -453,7 +532,7 @@ export default function Portfolio() {
           </div>
         </section>
 
-        <Separator className="max-w-5xl mx-auto bg-white/[0.04]" />
+        <Separator className="max-w-5xl mx-auto bg-white/4" />
 
         {/* ── Projetos ── */}
         <section id="projetos" className="py-28 px-6">
@@ -468,11 +547,10 @@ export default function Portfolio() {
                 <Card
                   key={project.name}
                   data-animation="project"
-                  className={`group relative overflow-hidden border transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl ${
-                    project.highlight
-                      ? 'border-emerald-500/20 bg-emerald-500/[0.04] hover:border-emerald-500/40 hover:shadow-emerald-500/10'
-                      : 'border-white/[0.06] bg-white/[0.02] hover:border-white/10'
-                  }`}
+                  className={`group relative overflow-hidden border transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl ${project.highlight
+                    ? 'border-emerald-500/20 bg-emerald-500/4 hover:border-emerald-500/40 hover:shadow-emerald-500/10'
+                    : 'border-white/6 bg-white/2 hover:border-white/10'
+                    }`}
                 >
                   {project.highlight && (
                     <div className="absolute top-4 right-4">
@@ -517,13 +595,122 @@ export default function Portfolio() {
           </div>
         </section>
 
-        <Separator className="max-w-5xl mx-auto bg-white/[0.04]" />
+        <Separator className="max-w-5xl mx-auto bg-white/4" />
+
+        <section id="conquistas" className="py-28 px-6">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-emerald-400 font-mono text-xs tracking-widest uppercase mb-4">
+              05 / Além do código
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Inovação, pessoas e ideias
+            </h2>
+            <p className="text-white/40 text-sm mb-12 max-w-lg">
+              Desenvolvimento vai além de escrever código. Aqui estão experiências que moldaram minha visão de produto, negócio e trabalho em equipe.
+            </p>
+
+            <div className="relative">
+              {/* linha vertical */}
+              <div className="absolute left-4.75 top-0 bottom-0 w-px bg-white/6" />
+
+              <div className="space-y-8">
+                {experiences.map((item, i) => (
+                  <div
+                    key={i}
+                    data-animation="experience"
+                    className="relative flex gap-6 pl-12"
+                  >
+                    {/* bolinha */}
+                    <div
+                      className={`absolute left-0 top-1 size-10 rounded-full flex items-center justify-center border ${item.highlight
+                        ? 'border-yellow-500/40 bg-yellow-500/10 text-yellow-400'
+                        : 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400'
+                        }`}
+                    >
+                      {item.highlight
+                        ? <Trophy className="size-4" />
+                        : <Briefcase className="size-4" />
+                      }
+                    </div>
+
+                    <div className="flex-1 pb-2">
+                      <div className="flex items-start justify-between gap-3 flex-wrap mb-1">
+                        <div className="flex items-center gap-3 flex-wrap">
+                          <span className="text-white font-semibold text-base">{item.title}</span>
+                          <Badge
+                            variant="outline"
+                            className={`font-mono text-[10px] ${item.highlight
+                              ? 'border-yellow-500/30 text-yellow-400 bg-yellow-500/5'
+                              : 'border-white/10 text-white/30'
+                              }`}
+                          >
+                            {item.badge}
+                          </Badge>
+                        </div>
+                        <span className="text-white/20 font-mono text-xs shrink-0">{item.date}</span>
+                      </div>
+                      <p className="text-emerald-400/70 text-xs font-mono mb-2">{item.subtitle}</p>
+                      <p className="text-white/50 text-sm leading-relaxed">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-12 p-5 rounded-xl border border-white/6 bg-white/2">
+              <p className="text-white/40 text-sm leading-relaxed">
+                Além das experiências listadas, possuo certificação em{' '}
+                <strong className="text-white/70">Metodologia Lean</strong> e participação em
+                diversos eventos de tecnologia, startups e inovação.{' '}
+                <strong className="text-white/70">Fotos e registros</strong> disponíveis mediante solicitação.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <Separator className="max-w-5xl mx-auto bg-white/4" />
+
+        <section id="feedbacks" className="py-28 px-6 overflow-hidden">
+          <div className="max-w-5xl mx-auto mb-12">
+            <p className="text-emerald-400 font-mono text-xs tracking-widest uppercase mb-4">
+              06 / Feedbacks
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              O que dizem sobre mim
+            </h2>
+            <p className="text-white/40 text-sm max-w-lg">
+              Perspectivas de pessoas com quem trabalhei em projetos, equipes e eventos.
+            </p>
+          </div>
+
+          {/* Carrossel */}
+          <div className="relative w-full mb-4">
+            <div className="flex animate-marquee-left whitespace-nowrap">
+              {[...testimonials, ...testimonials].map((t, i) => (
+                <div
+                  key={i}
+                  className="inline-flex flex-col justify-between mx-3 p-5 rounded-xl border border-white/6 bg-white/2 min-w-[320px] max-w-[320px] whitespace-normal align-top"
+                >
+                  <p className="text-white/60 text-sm leading-relaxed mb-4">
+                    "{t.quote}"
+                  </p>
+                  <div>
+                    <p className="text-white/90 text-sm font-semibold">{t.author}</p>
+                    <p className="text-emerald-400/60 text-xs font-mono mt-0.5">{t.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <Separator className="max-w-5xl mx-auto bg-white/4" />
 
         {/* ── Agora ── */}
         <section id="agora" className="py-28 px-6">
           <div className="max-w-5xl mx-auto">
             <p className="text-emerald-400 font-mono text-xs tracking-widest uppercase mb-4">
-              05 / Atualmente
+              07 / Atualmente
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               No que estou focado agora
@@ -537,7 +724,7 @@ export default function Portfolio() {
                 <div
                   key={i}
                   data-animation="learning"
-                  className="group p-5 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:border-emerald-500/20 hover:bg-white/[0.04] transition-all duration-300"
+                  className="group p-5 rounded-xl border border-white/6 bg-white/2 hover:border-emerald-500/20 hover:bg-white/4 transition-all duration-300"
                 >
                   <div className="size-8 rounded-lg border border-emerald-500/20 bg-emerald-500/5 text-emerald-400 flex items-center justify-center mb-4 group-hover:bg-emerald-500/10 transition-colors">
                     {item.icon}
@@ -550,13 +737,13 @@ export default function Portfolio() {
           </div>
         </section>
 
-        <Separator className="max-w-5xl mx-auto bg-white/[0.04]" />
+        <Separator className="max-w-5xl mx-auto bg-white/4" />
 
         {/* ── Contato ── */}
         <section id="contato" className="py-28 px-6">
           <div className="max-w-5xl mx-auto text-center">
             <p className="text-emerald-400 font-mono text-xs tracking-widest uppercase mb-4">
-              06 / Contato
+              08 / Contato
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Vamos trabalhar juntos?
@@ -599,14 +786,14 @@ export default function Portfolio() {
                   href={contact.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex flex-col items-center gap-3 p-5 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:border-emerald-500/30 hover:bg-emerald-500/[0.04] transition-all duration-300 hover:-translate-y-1"
+                  className="group flex flex-col items-center gap-3 p-5 rounded-xl border border-white/6 bg-white/2 hover:border-emerald-500/30 hover:bg-emerald-500/4 transition-all duration-300 hover:-translate-y-1"
                 >
                   <div className="text-white/30 group-hover:text-emerald-400 transition-colors duration-300">
                     {contact.icon}
                   </div>
                   <div>
                     <div className="text-white/90 font-medium text-sm">{contact.label}</div>
-                    <div className="text-white/30 text-xs mt-0.5 truncate max-w-[120px]">
+                    <div className="text-white/30 text-xs mt-0.5 truncate max-w-30">
                       {contact.value}
                     </div>
                   </div>
@@ -617,7 +804,7 @@ export default function Portfolio() {
         </section>
 
         {/* Footer */}
-        <footer className="border-t border-white/[0.04] py-8 px-6 text-center">
+        <footer className="border-t border-white/4 py-8 px-6 text-center">
           <p className="text-white/20 font-mono text-xs tracking-widest">
             © 2025 Eduardo Henrique Cioli Machado
             <span className="text-emerald-500/40"> · </span>
