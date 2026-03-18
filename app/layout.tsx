@@ -38,13 +38,6 @@ export const metadata: Metadata = {
   icons: {
     icon: '/logo-32px.png',
     apple: '/apple-icon.png',
-    other: [
-      {
-        rel: 'icon',
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
   },
 }
 
