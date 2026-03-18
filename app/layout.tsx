@@ -36,21 +36,15 @@ export const metadata: Metadata = {
     images: ['/og-image.jpg'],
   },
   icons: {
-    icon: [
+    icon: '/logo-32px.png',
+    apple: '/apple-icon.png',
+    other: [
       {
-        url: '/logo-32px.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/logo-32px.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
+        rel: 'icon',
         url: '/icon.svg',
         type: 'image/svg+xml',
       },
     ],
-    apple: '/apple-icon.png',
   },
 }
 
